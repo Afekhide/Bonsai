@@ -88,7 +88,7 @@ function Footer() {
 
         {/*Bonsai Socials*/}
         <section>
-          <h4 className="uppercase text-gray-500 text-lg font-bold">Product</h4>
+          <h4 className="uppercase text-gray-500 text-lg font-bold">Bonsai</h4>
           <section className="flex-col space-y-2">
             <p href="#" className="text-gray-600  text-sm mt-6">About</p>
             <p href="#" className="text-gray-600  text-sm">Support</p>
