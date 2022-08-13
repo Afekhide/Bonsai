@@ -12,7 +12,7 @@
   "scripts": {
     "css:watch": "cd ./tailwind && postcss ./tailwind.css -o ../src/styles/main.css -w",
     "start": "set PORT=3306 && react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && echo '/* /index.html 200' | cat > build/_redirects",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
