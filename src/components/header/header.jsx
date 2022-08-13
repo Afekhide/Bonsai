@@ -5,11 +5,11 @@ import menuIcon from '../../assets/menu.svg';
 
 function Header() {
   return (
-    <header className='px-12 md:px-16 lg:px-20 xl:px-44 bg-white dark:bg-gray-700 dark:text-white z-50'>
+    <header className='px-8 sm:px-12 md:px-16 lg:px-32 xl:px-72 bg-white dark:bg-gray-700 dark:text-white z-50'>
         <section className='py-5 flex justify-between items-center'>
             {/*Section containing the logo*/}
             <section>
-                <img src={Logo} alt="Bonsai Logo" className="w-32"/>
+                <img src={Logo} alt="Bonsai Logo" className="w-24 sm:w-32"/>
             </section>
 
             {/*Section containing the major navigation links*/}
@@ -48,7 +48,11 @@ function Header() {
 
             {/*Section containing the menu icon, only visible on small devices*/}
             <section className="menu-btn lg:hidden">
-                <img src={menuIcon} alt="" className='w-5'/>
+            <svg className="fill-current text-custom w-5 h-5" fill="current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.75 24.75">
+                <path d="M0,3.875c0-1.104,0.896-2,2-2h20.75c1.104,0,2,0.896,2,2s-0.896,2-2,2H2C0.896,5.875,0,4.979,0,3.875z M22.75,10.375H2
+                    c-1.104,0-2,0.896-2,2c0,1.104,0.896,2,2,2h20.75c1.104,0,2-0.896,2-2C24.75,11.271,23.855,10.375,22.75,10.375z M22.75,18.875H2
+                    c-1.104,0-2,0.896-2,2s0.896,2,2,2h20.75c1.104,0,2-0.896,2-2S23.855,18.875,22.75,18.875z"/>
+            </svg>
             </section>
         </section>
     </header>

@@ -4,7 +4,7 @@ import dropDownIcon from '../../assets/arrow.svg';
 
 function Footer() {
   return (
-    <footer className="px-12 md:px-16 lg:px-32 xl:px-44">
+    <footer className="px-8 sm:px-12 md:px-16 lg:px-32 xl:px-72 py-12 md:py-16 lg:py-24">
       <section className="space-y-4 md:flex md:justify-between items-start">
         <section>
           <h4 className="uppercase text-gray-500 text-lg font-bold">Product</h4>
