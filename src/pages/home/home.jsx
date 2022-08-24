@@ -16,13 +16,22 @@ import taxesIcon from '../../assets/taxes.svg';
 import taskTrackingIcon from '../../assets/task-tracking.svg';
 import timeTrackingIcon from '../../assets/time-tracking.svg';
 import invoicesIcon from '../../assets/invoices.svg';
-import { TweenMax, TimelineMax } from 'gsap';
+import crmHero from '../../assets/crm.png';
+import contractsHero from '../../assets/Contact-opt.png';
+import accountingHero from '../../assets/accounting.png';
+import formsHero from '../../assets/forms-opt.png';
+import invoiceHero from '../../assets/invoice-min.png';
+import proposalHero from '../../assets/Proposal-opt.png';
+import timeHero from '../../assets/time-track.png';
+import taskHero from '../../assets/task-track.png';
+import gsap from 'gsap';
 
 function Home() {
     const [activeService, setActiveService] = useState(0);
     const services = [
         {
             text: "Proposals",
+            hero: proposalHero,
             icon: proposalsIcon,
             title: "Win More Work",
             description: "With just a few clicks, you can craft structured proposals with clear estimates to close your deal faster."
@@ -30,29 +39,34 @@ function Home() {
         {
             text: "Contracts",
             icon: contractsIcon,
+            hero: contractsHero,
             title: "Win More Contracts",
             description: "With just a few clicks, you can craft structured proposals with clear estimates to close your deal faster."
         },
         {
             text: "Clent CRM",
             icon: crmIcon,
+            hero: crmHero,
             title: "Improved Client CRM",
             description: "With just a few clicks, you can craft structured proposals with clear estimates to close your deal faster."
         },
         {
             text: "Time Tracking",
+            hero: timeHero,
             icon: timeTrackingIcon,
             title: "Improved Time Management",
             description: "With just a few clicks, you can craft structured proposals with clear estimates to close your deal faster."
         },
         {
             text: "Invoices",
+            hero: invoiceHero,
             icon: invoicesIcon,
             title: "Automatic Invoices",
             description: "With just a few clicks, you can craft structured proposals with clear estimates to close your deal faster."
         },
         {
             text: "Task Tracking",
+            hero: taskHero,
             icon: taskTrackingIcon,
             title: "Detailed Task Tracking",
             description: "With just a few clicks, you can craft structured proposals with clear estimates to close your deal faster."
@@ -60,11 +74,13 @@ function Home() {
         {
             text: "Accounting and Taxes",
             icon: taxesIcon,
+            hero: accountingHero,
             title: "Straightforward Accounting",
             description: "With just a few clicks, you can craft structured proposals with clear estimates to close your deal faster."
         },
         {
             text: "Forms",
+            hero: formsHero,
             icon: formsIcon,
             title: "Expertly Designed Form",
             description: "With just a few clicks, you can craft structured proposals with clear estimates to close your deal faster."
@@ -79,18 +95,15 @@ function Home() {
 
     useEffect(() => {
         document.title = 'Home';
-        TweenMax.from(headerRef, 1, {
-            opacity: 0,
+        const timeLine = gsap.timeline({paused: false})
+        timeLine.from(headerRef, 1.2, {
             y: '-20vh',
-            delay: 0.5
-        })
-
-        TweenMax.from(heroRef, 1.2, {
+        }).from(heroRef, 1.2, {
             opacity: 0,
             y: "10vh",
             delay: 1,
             
-        })
+        }, '-=2')
 
     }, [])
 
@@ -160,7 +173,9 @@ function Home() {
 
             {/*Mobile Services Navigations, hidden on screens 768px and above*/}
             <section className="block md:hidden px-8 sm:px-12 py-16">
-                <p>Hello Mobile</p>
+                <section>
+                    {services.forEach((service, index) => {})}
+                </section>
             </section>
 
             {/*Desktop Services Navigations, hidden on screens below 768px*/}

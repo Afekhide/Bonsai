@@ -544,6 +544,9 @@ video {
 .ml-24 {
   margin-left: 6rem;
 }
+.mt-12 {
+  margin-top: 3rem;
+}
 .box-border {
   box-sizing: border-box;
 }
