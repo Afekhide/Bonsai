@@ -173,8 +173,31 @@ function Home() {
 
             {/*Mobile Services Navigations, hidden on screens 768px and above*/}
             <section className="block md:hidden px-8 sm:px-12 py-16">
-                <section>
-                    {services.forEach((service, index) => {})}
+                <section className="flex flex-col space-y-2">
+                    {services.map((service, index) => {
+                        return index === activeService ? 
+                        <section key={index}>
+                            <section 
+                            className="px-4 py-3 flex items-center space-x-2 shadow-lg rounded-sm z-[3]"
+                            key={index}>
+                                <img src={service.icon} alt={service.text + " icon"} className="w-4"/>
+                                <p className="font-bold text-lg text-gray-500">{service.text}</p>
+                            </section>
+                            <section>
+                                <h2 className="font-custom my-4 text-2xl text-gray-500">{services[activeService].title}</h2>
+                                <p className="text-lg text-gray-600 font-light my-4">{services[activeService].description}</p>
+                                <img className="w-full" src={services[activeService].hero} alt="hero images" />
+                            </section>
+                        </section>
+
+                        :
+                        <section  key={index}
+                        className="px-4 py-3 flex items-center space-x-2"
+                        onClick={ev => setActiveService(index)}>
+                           <img src={service.icon} alt={service.text + " icon"} className="w-4"/>
+                            <p className="font-bold text-lg text-gray-500">{service.text}</p>
+                        </section>
+                    })}
                 </section>
             </section>
 
@@ -204,6 +227,14 @@ function Home() {
                         <p className="mt-2 md:w-full w-7/12 font-light text-gray-600 text-lg">{services[activeService].description}</p>
                         <p className="mt-5 font-semibold text-custom text-md uppercase">Explore {services[activeService].text}</p>
                     </section>
+                </section>
+            </section>
+
+            {/*Trustee Stats*/}
+            <section className="px-8 sm:px-12 md:px-24 lg:px-24 xl:px-64 py-8 md:py-16 w-full">
+                <section className="md:flex flex-col items-center justify-center">
+                    <h3 className="font-custom text-center md:w-4/6 text-3xl text-gray-600">Trusted by 500K+ self-employed workers and small businesses</h3>
+                    <p className="mt-6 md:w-4/6 xl:w-2/5 font-light text-lg xl:text-xl text-gray-700 text-center">Whether you're just getting started or your your business is booming, Bonsai has you covered.</p>
                 </section>
             </section>
             <Footer/>
